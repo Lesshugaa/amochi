@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Pau | Thiago</title>
+  <meta name="theme-color" content="#ff6b9d">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- BOTÓN DE MÚSICA -->
+  <button id="musicBtn" class="music-btn">
+    <span id="musicText">Toca para música</span>
+  </button>
+
+  <!-- MÚSICA LOCAL -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="perfect.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="container">
+
+    <!-- PÁGINA 1: PRESENTACIÓN ÉPICA -->
+    <div id="page1" class="page active">
+      <div class="petal-rain"></div>
+      <div class="star-field"></div>
+      <div class="floating-hearts">
+        <span>❤</span><span>❤</span><span>❤</span><span>❤</span><span>❤</span><span>❤</span><span>❤</span><span>❤</span><span>❤</span><span>❤</span>
+      </div>
+
+      <h1 class="glow-title">Para Pau</h1>
+      <p class="subtitle">De parte de Thiago</p>
+
+      <div class="days-counter">
+        <p>Hace <span id="daysCount">91</span> días...</p>
+        <p class="pulse-text">empecé a amarte</p>
+      </div>
+
+      <div class="love-message">
+        <p>Porque cada día a tu lado...</p>
+        <p class="pulse-text">es mi momento favorito</p>
+      </div>
+
+      <button class="btn btn-epic" onclick="nextPage(2)">
+        <span>Abrir mi corazón</span>
+      </button>
+    </div>
+
+    <!-- PÁGINA 2 -->
+    <div id="page2" class="page hidden">
+      <h1>¿Te acordás, Gordita?</h1>
+      <p>Hace casi 3 meses empezamos a hablar... y no me arrepiento de nada. Agradezco mucho haberte cruzado y poder conocerte de esta forma que tanto amo..</p>
+      <p>Fue como encontrar mi lugar favorito del mundo</p>
+      <button class="btn btn-primary" onclick="nextPage(3)">Nuestros momentos</button>
+
+      <div class="back-btn-container">
+        <button class="btn-back" onclick="prevPage()">
+          <span>❤</span> Volver
+        </button>
+      </div>
+    </div>
+
+    <!-- PÁGINA 3: FOTOS LOCALES -->
+    <div id="page3" class="page hidden">
+      <h1>Momentos que atesoro</h1>
+      <div class="memories">
+        <div class="memory-card" onclick="toggleCaption(this)">
+          <img src="foto1.jpg" alt="Primera salida">
+          <div class="caption">Una de nuestras primeras salidas... Ir matcheados con los buzos fue re lindo</div>
+        </div>
+        <div class="memory-card" onclick="toggleCaption(this)">
+          <img src="foto2.jpg" alt="Noche loca">
+          <div class="caption">Tardes que nos quedábamos acostados abrazándonos… es hermoso estar cerca tuyo.</div>
+        </div>
+        <div class="memory-card" onclick="toggleCaption(this)">
+          <img src="foto3.jpg" alt="Sanguches">
+          <div class="caption"> Y sin poder faltar, el morfi… siempre bien chanchos, pero estando con vos, todo está rico.</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="nextPage(4)">Lo que siento</button>
+
+      <div class="back-btn-container">
+        <button class="btn-back" onclick="prevPage()">
+          <span>❤</span> Volver
+        </button>
+      </div>
+    </div>
+
+    <!-- PÁGINA 4 -->
+    <div id="page4" class="page hidden">
+      <h1>Cada día con vos, Vidita...</h1>
+      <p>Es un regalo que no merezco, pero que agradezco con todo el corazón.</p>
+      <p>Tu voz, tus mensajes, tus enojos, tu sonrisa... todo me hace inmensamente feliz.</p>
+      <div class="heart">❤</div>
+      <button class="btn btn-primary" onclick="nextPage(5)"> Asi que... quiero preguntarte algo</button>
+
+      <div class="back-btn-container">
+        <button class="btn-back" onclick="prevPage()">
+          <span>❤</span> Volver
+        </button>
+      </div>
+    </div>
+
+    <!-- PÁGINA 5 -->
+    <div id="page5" class="page hidden">
+      <h1 style="font-size: 3.2rem;">Pau,</h1>
+      <h1>¿Querés ser mi novia?</h1>
+      <div class="question-buttons">
+        <button class="btn btn-primary" style="background:#4caf50;" onclick="sayYes()">¡SÍ!</button>
+        <button class="btn btn-primary" style="background:#ff9800;" onclick="sayNo()">No...</button>
+      </div>
+
+      <div class="back-btn-container">
+        <button class="btn-back" onclick="prevPage()">
+          <span>❤</span> Volver
+        </button>
+      </div>
+    </div>
+
+    <!-- PÁGINA 6 -->
+    <div id="page6" class="page hidden">
+      <h1>¡VAMAA! ¡TE AMO, HERMOSA!</h1>
+      <p>Ahora somos oficialitos.</p>
+      <p>Gracias por hacer de cada día algo mágico.</p>
+      <div class="heart">❤ ❤ ❤</div>
+      <p>— Tu novio, Thiago</p>
+
+      <div class="back-btn-container">
+        <button class="btn-back" onclick="prevPage()">
+          <span>❤</span> Volver
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
